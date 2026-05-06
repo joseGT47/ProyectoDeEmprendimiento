@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasos Locos | Explosión de Sabor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Bangers&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcfcfc;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Navegación --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Bangers', cursive;
+            font-size: 2rem;
+            color: #e63946;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #ffb703;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e63946;
+        }
+
+        /* --- Hero Section (Con Imagen de Fondo) --- */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .background-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen para leer mejor */
+        }
+
+        .hero-content {
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .picosito {
+            color: #ffb703;
+            text-shadow: 2px 2px #e63946;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #e63946;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: #ffb703;
+        }
+
+        /* --- Productos --- */
+        .productos {
+            padding: 100px 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #e63946;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #fb8500;
+        }
+
+        .card-img {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .precio {
+            display: block;
+            margin-top: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #023047;
+        }
+
+        /* --- Animaciones --- */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Vasos<span>Locos</span></h1>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-image-container">
+            <!-- RECUERDA: La imagen que descargaste debe llamarse 'vaso_loco.png' -->
+            <img src="image.png" alt="Vaso loco preparado" class="background-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h2 class="fade-in">¿Antojo de algo <span class="picosito">Picosito?</span></h2>
+            <p class="slide-up">Los mejores vasos preparados con pepino, mango, gomitas y ese toque de chamoy que te encanta.</p>
+            <a href="#menu" class="btn">Ver Menú</a>
+        </div>
+    </section>
+
+    <section id="menu" class="productos">
+        <h2 class="section-title">Nuestra Especialidad</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-img">🥭</div>
+                <h3>El Vaso "Todo Terreno"</h3>
+                <p>Base de pepino picado, mango dulce, lluvia de gomitas, mucho Tajín, limón, chamoy y nuestra salsa especial.</p>
+                <span class="precio">$50.00</span>
+            </div>
+            
+            <div class="card">
+                <div class="card-img">🥒</div>
+                <h3>Clásico Pepino</h3>
+                <p>Solo para amantes del pepino crujiente con su toque de limón y sal.</p>
+                <span class="precio">$35.00</span>
+            </div>
+
+            <div class="card">
+                <div class="card-img">🍬</div>
+                <h3>Gomilocos</h3>
+                <p>Una explosión de gomitas bañadas en chamoy y Tajín.</p>
+                <span class="precio">$45.00</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <p>&copy; 2026 Vasos Locos - Hecho con sabor</p>
+        <p style="margin-top: 10px; font-size: 0.9rem; color: #bbb;">Pepino • Mango • Chamoy • Tajín</p>
+    </footer>
+
+</body>
